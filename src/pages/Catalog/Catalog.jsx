@@ -14,7 +14,7 @@ export default function Catalog() {
 
   const [filters, setFilters] = useState({
     make: '',
-    filterPrices: [],
+    filteredPrices: [],
     minMileage: '',
     maxMileage: '',
   });
@@ -34,8 +34,9 @@ export default function Catalog() {
   useEffect(() => {
     if (isFiltering) {
       if (
+        // filters.filteredPrices is undefined
         filters.make ||
-        filters.filterPrices.length > 0 ||
+        filters.filteredPrices.length > 0 ||
         filters.minMileage ||
         filters.maxMileage
       ) {
@@ -44,8 +45,8 @@ export default function Catalog() {
             return false;
           }
           if (
-            filters.filterPrices.length > 0 &&
-            !filters.filterPrices.some(
+            filters.filteredPrices.length > 0 &&
+            !filters.filteredPrices.some(
               priceObj => priceObj.value === advert.rentalPrice.replace('$', '')
             )
           ) {
