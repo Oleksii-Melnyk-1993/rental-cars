@@ -25,14 +25,14 @@ export const Image = styled.img`
 export const TitleWrap = styled.div`
   width: 274px;
   align-items: center;
-  color: #121417;
+  color: #f3f3f2;
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
 `;
 
 export const Title = styled.h3`
-  color: #121417;
+  color: #f3f3f2;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
@@ -46,7 +46,7 @@ export const Span = styled.span`
 `;
 
 export const Text = styled.p`
-  color: #121417;
+  color: #f3f3f2;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -65,13 +65,13 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
-  color: rgba(18, 20, 23, 0.5);
+  color: #eef2e2;
   font-size: 12px;
   font-weight: 400;
   line-height: 1.5;
 
   :not(:last-child) {
-    border-right: 1px solid rgba(18, 20, 23, 0.1);
+    border-right: 1px solid #f5f9ee;
     margin-right: 6px;
     padding-right: 6px;
   }

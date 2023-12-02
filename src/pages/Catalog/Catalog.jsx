@@ -88,7 +88,14 @@ export default function Catalog() {
   const maxMileage = Math.max(...mileage);
 
   return (
-    <>
+    <div
+      style={{
+        background:
+          'linear-gradient(109.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 78.9%)',
+        // Додаткові стилі, якщо потрібно
+        // Наприклад: width, height, padding і т.д.
+      }}
+    >
       <NavBar />
       <WrapperFilter>
         <Filter
@@ -125,6 +132,6 @@ export default function Catalog() {
           </LoadMore>
         )}
       </WrapperList>
-    </>
+    </div>
   );
 }

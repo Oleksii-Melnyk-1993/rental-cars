@@ -46,7 +46,7 @@ export default function MainModal({ open, onClose, data }) {
             <CloseIcon onClick={onClose}>
               <IconX src={Close} />
             </CloseIcon>
-            <Image scr={data.img} alt={data.make} width="461" height="248" />
+            <Image src={data.img} alt={data.make} width="461" height="248" />
             <Wrap>
               <TextWrap>
                 <Title>
