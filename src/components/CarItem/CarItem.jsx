@@ -24,7 +24,7 @@ export default function CarItem({ data }) {
     <Wrapper>
       <ImageWrap>
         <FavoriteIcon data={data} />
-        <Image src={data.image} />
+        <Image src={data.img} />
       </ImageWrap>
       <TitleWrap>
         <Title>
