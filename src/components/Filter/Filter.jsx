@@ -56,19 +56,19 @@ export default function Filter({ makes, prices, onFilterChange }) {
     ) {
       toast.error('The maximum mileage must exceed the minimum mileage.');
     }
-  };
 
-  const newFilters = {
-    make: selectedMake,
-    filteredPrices: filteredPrices.map(price => ({
-      value: price,
-      label: `${price}`,
-    })),
-    minMileage: parseInt(minValue.replace(/,/g, ''), 10),
-    maxMileage: parseInt(maxValue.replace(/,/g, ''), 10),
-  };
+    const newFilters = {
+      make: selectedMake,
+      filteredPrices: filteredPrices.map(price => ({
+        value: price,
+        label: `${price}`,
+      })),
+      minMileage: parseInt(minValue.replace(/,/g, ''), 10),
+      maxMileage: parseInt(maxValue.replace(/,/g, ''), 10),
+    };
 
-  onFilterChange(newFilters);
+    onFilterChange(newFilters);
+  };
 
   return (
     <Container>
