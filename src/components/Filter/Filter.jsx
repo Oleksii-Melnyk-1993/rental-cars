@@ -11,7 +11,7 @@ import {
   SpanLeft,
   SpanRight,
 } from './Filter.styled';
-import Select from 'react-select/dist/declarations/src/Select';
+import Select from 'react-select';
 import Button from 'components/Button/Button';
 
 export default function Filter({ makes, prices, onFilterChange }) {

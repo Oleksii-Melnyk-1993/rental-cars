@@ -4,7 +4,7 @@ import { useGetAdvertsQuery, useGetCarsByPageQuery } from 'redux/operations';
 import { LoadMore, WrapperFilter, WrapperList } from './Catalog.styled';
 import Filter from 'components/Filter/Filter';
 import CarItem from 'components/CarItem/CarItem';
-import { Loader } from 'components/Loader/Loader';
+import Loader from 'components/Loader/Loader';
 
 export default function Catalog() {
   const [page, setPage] = useState(1);
