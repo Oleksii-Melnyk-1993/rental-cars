@@ -22,12 +22,14 @@ export const Text = styled.p`
   font-size: 30px;
   font-style: normal;
   font-weight: 600;
-  color: #ffffff;
+  color: black;
   text-align: center;
   width: 460px;
   margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.8);
 `;
 
 export const Button = styled(Link)`

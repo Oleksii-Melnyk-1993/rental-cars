@@ -40,7 +40,7 @@ export default function Catalog() {
         filters.maxMileage
       ) {
         const filteredAdverts = allAdverts.filter(advert => {
-          if (filters.make && advert.mike !== filters.make.value) {
+          if (filters.make && advert.make !== filters.make.value) {
             return false;
           }
           if (
