@@ -109,7 +109,7 @@ export default function Catalog() {
               <CarItem key={index} data={car} />
             ))
           ) : (
-            <div>No matches found based on the chosen criteria.</div>
+            <div>No matches found</div>
           )
         ) : error ? (
           <>Oops, there was an error...</>

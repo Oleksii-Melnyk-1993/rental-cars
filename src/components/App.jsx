@@ -1,63 +1,20 @@
-import { useDispatch, useSelector } from 'react-redux';
-import css from './App.module.css';
+import { Route, Routes } from 'react-router-dom';
+import Layout from './Layout/Layout';
+import { lazy } from 'react';
 
-import { ContactForm } from './ContactForm/ContactForm';
-import { ContactList } from './ContactList/ContactList';
-import { Filter } from './Filter/Filter';
-import {
-  selectContactsCount,
-  selectError,
-  selectIsLoading,
-} from 'redux/selectors';
-import { Toaster } from 'react-hot-toast';
-import { useEffect } from 'react';
-import { fetchContacts } from 'redux/apiContacts';
-import { Audio } from 'react-loader-spinner';
+const Home = lazy(() => import('../../pages/Home/Home'));
+const Catalog = lazy(() => import('../../pages/Catalog/Catalog'));
+const Favorites = lazy(() => import('../../pages/Favorites/Favorites'));
 
-export const App = () => {
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
-  const dispatch = useDispatch();
-  const totalCount = useSelector(selectContactsCount);
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
-
+export default function App() {
   return (
-    <div
-      style={{
-        paddingTop: '60px',
-        paddingBottom: '60px',
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        alignItems: 'center',
-        color: '#010101',
-      }}
-    >
-      <h1 className={css.title}>Phonebook</h1>
-      <ContactForm />
-      <h2 className={css.subtitle}>Contacts</h2>
-      <p className={css.total}>
-        Total contacts: <span className={css.total_count}>{totalCount}</span>
-      </p>
-      <Filter />
-      {isLoading && !error && (
-        <Audio
-          height="80"
-          width="80"
-          radius="9"
-          color="green"
-          ariaLabel="loading"
-          wrapperStyle
-          wrapperClass
-        />
-      )}
-      {error && <p> An {error} has occured😥, try again later </p>}
-      <ContactList />
-      <Toaster position="top-right" />
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="*" element={<Home />} />
+      </Route>
+    </Routes>
   );
-};
+}
